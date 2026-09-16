@@ -4,7 +4,13 @@ import authConfig from "./auth.config";
 const { auth } = NextAuth(authConfig);
 
 const publicRoutes = ["/"];
-const authRoutes = ["/auth/login", "/auth/register"];
+const authRoutes = [
+    "/login",
+    "/register",
+    "/auth/login",
+    "/auth/register"
+];
+
 const apiAuthPrefix = "/api/auth";
 const DEFAULT_LOGIN_REDIRECT = "/dashboard";
 
@@ -26,7 +32,7 @@ export default auth((req) => {
     }
 
     if (!isLoggedIn && !isPublicRoute) {
-        return Response.redirect(new URL("/auth/login", nextUrl));
+        return Response.redirect(new URL("/login", nextUrl));
     }
 
     return null;
