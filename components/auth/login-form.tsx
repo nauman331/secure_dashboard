@@ -42,11 +42,23 @@ export const LoginForm = () => {
 
     return (
         <div>
-            <div className="mb-8">
-                <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-                    Sign in
-                </h2>
-                <p className="mt-1.5 text-sm text-zinc-500 dark:text-zinc-400">
+            <div className="mb-6">
+                <div className="flex items-center justify-between">
+                    <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+                        Sign in
+                    </h2>
+                    <button
+                        type="button"
+                        onClick={() => {
+                            form.setValue("email", "nauman33183@gmail.com");
+                            form.setValue("password", "admin123");
+                        }}
+                        className="rounded-lg border border-blue-200 bg-blue-50/80 px-2.5 py-1 text-xs font-semibold text-blue-700 hover:bg-blue-100 transition-colors cursor-pointer"
+                    >
+                        ⚡ 1-Click Demo Fill
+                    </button>
+                </div>
+                <p className="mt-1.5 text-xs text-zinc-500 dark:text-zinc-400">
                     Don&apos;t have an account?{" "}
                     <Link
                         href="/register"
@@ -131,20 +143,20 @@ export const LoginForm = () => {
                         </div>
                     )}
 
-                    <Button
+                    <button
                         type="submit"
                         disabled={isPending}
-                        className="h-11 w-full cursor-pointer rounded-lg bg-indigo-600 font-medium text-white transition-all hover:bg-indigo-700 active:scale-[0.99] disabled:opacity-70"
+                        className="h-11 w-full cursor-pointer rounded-xl bg-[#2563EB] font-semibold text-white shadow-xs transition-all hover:bg-[#1D4ED8] active:scale-[0.99] disabled:opacity-70 text-xs flex items-center justify-center tracking-wide"
                     >
                         {isPending ? (
                             <span className="flex items-center gap-2">
                                 <Loader2 className="h-4 w-4 animate-spin" />
-                                Signing in
+                                Signing in...
                             </span>
                         ) : (
-                            "Sign in"
+                            "Sign In to EduPak"
                         )}
-                    </Button>
+                    </button>
                 </form>
             </Form>
 
