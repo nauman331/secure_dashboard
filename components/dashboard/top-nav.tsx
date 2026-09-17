@@ -69,7 +69,7 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
   return (
     <>
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 py-6 px-6 sm:px-10 bg-transparent font-sans">
-        {/* Left: Big Bold Title (matching Skillset) */}
+        {/* Left: Big Bold Title (clean header, no toggle) */}
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A]">
             {title}
