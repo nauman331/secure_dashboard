@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, pgEnum, primaryKey, integer, varchar } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, pgEnum, primaryKey, integer, varchar, numeric } from "drizzle-orm/pg-core";
 import type { AdapterAccount } from "next-auth/adapters";
 
 export const roleEnum = pgEnum('role', ['USER', 'ADMIN']);
@@ -54,3 +54,20 @@ export const verificationTokens = pgTable(
         }),
     })
 );
+
+export const feeStatusEnum = pgEnum('fee_status', ['Paid', 'Pending', 'Overdue']);
+
+export const students = pgTable('student', {
+    id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+    rollId: varchar('roll_id', { length: 20 }).notNull().unique(),
+    fullName: text('full_name').notNull(),
+    grade: text('grade').notNull(),
+    section: text('section').default(''),
+    guardianName: text('guardian_name').notNull(),
+    guardianContact: varchar('guardian_contact', { length: 20 }).default(''),
+    feeStatus: feeStatusEnum('fee_status').default('Paid').notNull(),
+    attendanceRate: integer('attendance_rate').default(100),
+    gpa: numeric('gpa', { precision: 3, scale: 2 }).default('0.00'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});

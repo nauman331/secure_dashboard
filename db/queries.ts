@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { eq, desc } from "drizzle-orm";
 import { db } from "./index";
-import { users } from "./schema";
+import { users, students } from "./schema";
 
 export const getUserByEmail = async (email: string) => {
     try {
@@ -19,3 +19,7 @@ export const getUserById = async (id: string) => {
         return null;
     }
 }
+
+export const getAllStudents = async () => {
+    return await db.select().from(students).orderBy(desc(students.createdAt));
+};
