@@ -117,39 +117,50 @@ export default function FeesPage() {
       <div className="mx-auto max-w-7xl px-6 sm:px-10 space-y-5">
         {/* Top 4 Stat Cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm">
-            <p className="text-xs font-semibold text-slate-400">Total Billed</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
-              PKR 9.63M
-            </h3>
-            <span className="text-xs text-[#38BDF8] font-semibold mt-2 inline-block">
+          <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[120px]">
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="text-xs font-semibold text-slate-400">Total Billed</p>
+                <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
+                  PKR 9.63M
+                </h3>
+              </div>
+              <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
+            </div>
+            <span className="text-xs text-slate-300 font-semibold mt-2 inline-block">
               1,248 issued challans
             </span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80">
-            <p className="text-xs font-semibold text-slate-500">Collected Cashflow</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-emerald-600 mt-1">
-              PKR 8.42M
-            </h3>
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80 flex flex-col justify-between min-h-[120px]">
+            <div>
+              <p className="text-xs font-semibold text-slate-500">Collected Cashflow</p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-emerald-600 mt-1">
+                PKR 8.42M
+              </h3>
+            </div>
             <span className="text-xs text-emerald-600 font-semibold mt-2 inline-block">
               87.4% recovery rate
             </span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80">
-            <p className="text-xs font-semibold text-slate-500">Defaulter Arrears</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
-              PKR 1.21M
-            </h3>
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80 flex flex-col justify-between min-h-[120px]">
+            <div>
+              <p className="text-xs font-semibold text-slate-500">Defaulter Arrears</p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
+                PKR 1.21M
+              </h3>
+            </div>
             <span className="text-xs text-slate-400 mt-2 inline-block">88 pending vouchers</span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80">
-            <p className="text-xs font-semibold text-slate-500">Fee Concessions</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
-              PKR 450K
-            </h3>
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80 flex flex-col justify-between min-h-[120px]">
+            <div>
+              <p className="text-xs font-semibold text-slate-500">Fee Concessions</p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
+                PKR 450K
+              </h3>
+            </div>
             <span className="text-xs text-slate-400 mt-2 inline-block">32 merit scholarships</span>
           </div>
         </div>
@@ -164,7 +175,7 @@ export default function FeesPage() {
                 placeholder="Search challan # or student name..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="h-10 w-full rounded-full bg-white pl-9 pr-4 text-xs font-medium text-slate-800 shadow-2xs border border-slate-200/80 focus:border-[#2563EB] focus:outline-none"
+                className="h-10 w-full rounded-full bg-white pl-9 pr-4 text-xs font-medium text-slate-800 shadow-2xs border border-slate-200/80 focus:border-[#FF5F1F] focus:outline-none"
               />
             </div>
 
@@ -189,7 +200,7 @@ export default function FeesPage() {
           <button
             type="button"
             onClick={() => alert("Batch Challan Generator initialized.")}
-            className="inline-flex items-center gap-2 rounded-full bg-[#0F172A] px-5 py-2.5 text-xs font-bold text-white shadow-sm hover:bg-[#2563EB] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#FF5F1F] px-5 py-2.5 text-xs font-bold text-white shadow-sm hover:bg-[#E54E10] transition-colors cursor-pointer"
           >
             <Printer className="h-4 w-4" />
             Print Batch Challans
@@ -229,7 +240,9 @@ export default function FeesPage() {
                         className={`inline-flex items-center rounded-full px-3 py-0.5 text-[10px] font-bold ${
                           v.status === "Paid"
                             ? "bg-[#0F172A] text-white shadow-2xs"
-                            : "bg-blue-50 text-[#2563EB] border border-blue-200"
+                            : v.status === "Pending"
+                            ? "bg-orange-50 text-[#C2410C] border border-orange-200"
+                            : "bg-rose-50 text-rose-700 border border-rose-200"
                         }`}
                       >
                         {v.status}
@@ -240,18 +253,12 @@ export default function FeesPage() {
                         <button
                           type="button"
                           onClick={() => setSelectedVoucher(v)}
-                          className="rounded-full bg-[#2563EB] px-3.5 py-1 text-xs font-bold text-white hover:bg-[#1D4ED8] transition-colors cursor-pointer"
+                          className="rounded-full bg-[#FF5F1F] px-3.5 py-1 text-xs font-bold text-white hover:bg-[#E54E10] transition-colors cursor-pointer shadow-2xs"
                         >
-                          Record
+                          Mark Paid
                         </button>
                       ) : (
-                        <button
-                          type="button"
-                          onClick={() => alert(`Receipt downloaded for ${v.challanNo}`)}
-                          className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-200 transition-colors"
-                        >
-                          Receipt
-                        </button>
+                        <span className="text-[11px] text-slate-400 font-semibold">Cleared</span>
                       )}
                     </td>
                   </tr>
@@ -262,33 +269,37 @@ export default function FeesPage() {
         </div>
       </div>
 
-      {/* Record Payment Modal */}
+      {/* Collect Fee Modal */}
       {selectedVoucher && (
         <Modal
           isOpen={!!selectedVoucher}
           onClose={() => setSelectedVoucher(null)}
-          title="Record Fee Payment"
-          description={`Challan: ${selectedVoucher.challanNo} for ${selectedVoucher.studentName}`}
+          title="Collect Fee Payment"
+          description={`Challan: ${selectedVoucher.challanNo} • ${selectedVoucher.studentName}`}
         >
           <div className="space-y-4 text-xs">
-            <div className="p-4 rounded-2xl bg-slate-50">
-              <div className="flex justify-between text-slate-500">
-                <span>Student</span>
-                <span className="font-bold text-[#0F172A]">{selectedVoucher.studentName}</span>
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+              <div className="flex justify-between items-center">
+                <span className="text-slate-500">Payable Amount:</span>
+                <span className="text-lg font-extrabold text-[#0F172A]">{selectedVoucher.amount}</span>
               </div>
-              <div className="flex justify-between font-bold text-sm text-[#0F172A] pt-2 mt-2 border-t border-slate-200">
-                <span>Payable Amount</span>
-                <span>{selectedVoucher.amount}</span>
+              <div className="flex justify-between items-center mt-2">
+                <span className="text-slate-500">Student Class:</span>
+                <span className="font-semibold text-slate-800">{selectedVoucher.grade}</span>
+              </div>
+              <div className="flex justify-between items-center mt-2">
+                <span className="text-slate-500">Due Date:</span>
+                <span className="font-semibold text-slate-800">{selectedVoucher.dueDate}</span>
               </div>
             </div>
 
             <div>
-              <Label className="text-xs font-semibold">Payment Channel</Label>
-              <select className="mt-1 flex h-9 w-full rounded-xl border border-slate-200 bg-white px-3 text-xs text-slate-800">
-                <option>Bank Transfer (HBL / Alfalah)</option>
-                <option>JazzCash Direct</option>
-                <option>EasyPaisa Wallet</option>
+              <Label className="text-xs font-semibold">Payment Method</Label>
+              <select className="mt-1 flex h-9 w-full rounded-xl border border-slate-200 bg-white px-3 text-xs text-slate-800 focus:border-[#FF5F1F]">
                 <option>Cash at Accounts Counter</option>
+                <option>HBL Direct Transfer</option>
+                <option>JazzCash QR Scan</option>
+                <option>EasyPaisa Voucher</option>
               </select>
             </div>
 
@@ -299,9 +310,9 @@ export default function FeesPage() {
               <button
                 type="button"
                 onClick={() => markPaid(selectedVoucher.id)}
-                className="rounded-xl bg-[#2563EB] px-4 py-1.5 text-xs font-bold text-white hover:bg-[#1D4ED8] transition-colors cursor-pointer"
+                className="rounded-xl bg-[#FF5F1F] px-4 py-1.5 text-xs font-bold text-white hover:bg-[#E54E10] transition-colors cursor-pointer shadow-xs"
               >
-                Confirm Paid
+                Confirm Payment & Issue Receipt
               </button>
             </div>
           </div>

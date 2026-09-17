@@ -38,7 +38,6 @@ export default function AttendancePage() {
   const lateCount = records.filter((r) => r.status === "Late").length;
 
   const toggleStatus = (id: string) => {
-    const statuses: Array<"Present" | "Absent" | "Late"> = ["Present", "Absent", "Late"];
     setRecords((prev) =>
       prev.map((r) => {
         if (r.id !== id) return r;
@@ -79,39 +78,50 @@ export default function AttendancePage() {
       <div className="mx-auto max-w-7xl px-6 sm:px-10 space-y-5">
         {/* Top 4 Stat Cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm">
-            <p className="text-xs font-semibold text-slate-400">Attendance Rate</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
-              94.8%
-            </h3>
+          <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[120px]">
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="text-xs font-semibold text-slate-400">Attendance Rate</p>
+                <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
+                  94.8%
+                </h3>
+              </div>
+              <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
+            </div>
             <span className="text-xs text-emerald-400 font-semibold mt-2 inline-block">
               1,183 present today
             </span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80">
-            <p className="text-xs font-semibold text-slate-500">Unexcused Absentees</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
-              {absentCount}
-            </h3>
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80 flex flex-col justify-between min-h-[120px]">
+            <div>
+              <p className="text-xs font-semibold text-slate-500">Unexcused Absentees</p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
+                {absentCount}
+              </h3>
+            </div>
             <span className="text-xs text-rose-600 font-semibold mt-2 inline-block">
               SMS alert queued
             </span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80">
-            <p className="text-xs font-semibold text-slate-500">Late Arrivals</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
-              {lateCount}
-            </h3>
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80 flex flex-col justify-between min-h-[120px]">
+            <div>
+              <p className="text-xs font-semibold text-slate-500">Late Arrivals</p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
+                {lateCount}
+              </h3>
+            </div>
             <span className="text-xs text-slate-400 mt-2 inline-block">Arrived after 08:00 AM</span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80">
-            <p className="text-xs font-semibold text-slate-500">Biometric RFID Gate</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-emerald-600 mt-1">
-              Online
-            </h3>
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80 flex flex-col justify-between min-h-[120px]">
+            <div>
+              <p className="text-xs font-semibold text-slate-500">Biometric RFID Gate</p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-emerald-600 mt-1">
+                Online
+              </h3>
+            </div>
             <span className="text-xs text-slate-400 mt-2 inline-block">Gate 1 & 2 Synced</span>
           </div>
         </div>
@@ -122,7 +132,7 @@ export default function AttendancePage() {
             <select
               value={selectedClass}
               onChange={(e) => setSelectedClass(e.target.value)}
-              className="h-10 rounded-full bg-white px-4 text-xs font-bold text-slate-800 shadow-2xs border border-slate-200/80 cursor-pointer"
+              className="h-10 rounded-full bg-white px-4 text-xs font-bold text-slate-800 shadow-2xs border border-slate-200/80 cursor-pointer focus:border-[#FF5F1F]"
             >
               <option value="Grade 10 - Section A">Grade 10 - Section A</option>
               <option value="Grade 9 - Section B">Grade 9 - Section B</option>
@@ -142,7 +152,7 @@ export default function AttendancePage() {
           <button
             type="button"
             onClick={handleNotifyParents}
-            className="inline-flex items-center gap-2 rounded-full bg-[#0F172A] px-5 py-2.5 text-xs font-bold text-white shadow-sm hover:bg-[#2563EB] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#FF5F1F] px-5 py-2.5 text-xs font-bold text-white shadow-sm hover:bg-[#E54E10] transition-colors cursor-pointer"
           >
             <Send className="h-3.5 w-3.5" />
             {smsSent ? "SMS Alerts Dispatched!" : "Notify Absent Guardians"}
@@ -167,7 +177,7 @@ export default function AttendancePage() {
                   <tr key={r.id} className="hover:bg-slate-50/80 transition-colors">
                     <td className="py-3.5 px-3">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#0F172A] text-[#38BDF8] font-bold text-xs">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#0F172A] text-[#FF5F1F] font-bold text-xs">
                           {r.name.slice(0, 2).toUpperCase()}
                         </div>
                         <span className="font-bold text-[#0F172A]">{r.name}</span>

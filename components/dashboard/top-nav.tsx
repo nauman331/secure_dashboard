@@ -122,7 +122,7 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
             type="button"
             onClick={() => setShowQuickActionModal(true)}
             title="Quick Action"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-600 shadow-2xs border border-slate-200/80 hover:bg-[#2563EB] hover:text-white hover:border-[#2563EB] transition-all cursor-pointer"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-600 shadow-2xs border border-slate-200/80 hover:bg-[#FF5F1F] hover:text-white hover:border-[#FF5F1F] transition-all cursor-pointer"
           >
             <Plus className="h-4 w-4" />
           </button>
@@ -150,7 +150,7 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
               placeholder="Type to search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-10 w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-3 text-xs focus:border-[#2563EB] focus:bg-white focus:outline-none"
+              className="h-10 w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-3 text-xs focus:border-[#FF5F1F] focus:bg-white focus:outline-none"
             />
           </div>
 
@@ -166,11 +166,11 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
                 className="w-full flex items-center justify-between p-2.5 hover:bg-slate-50 rounded-xl text-left transition-colors group cursor-pointer"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-100 group-hover:bg-[#2563EB] group-hover:text-white transition-colors text-slate-600">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-100 group-hover:bg-[#FF5F1F] group-hover:text-white transition-colors text-slate-600">
                     <item.icon className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-900 group-hover:text-[#2563EB] transition-colors">
+                    <p className="text-xs font-bold text-slate-900 group-hover:text-[#FF5F1F] transition-colors">
                       {item.title}
                     </p>
                     <p className="text-[10px] text-slate-400">{item.category}</p>
@@ -191,7 +191,7 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
       >
         {actionSuccess ? (
           <div className="py-6 text-center animate-in zoom-in-95">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-[#2563EB]">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-orange-50 text-[#FF5F1F]">
               <CheckCircle2 className="h-6 w-6" />
             </div>
             <h4 className="mt-3 text-sm font-bold text-slate-900">Saved Successfully</h4>
@@ -203,9 +203,9 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
               <button
                 type="button"
                 onClick={() => setActionType("student")}
-                className={`py-2 text-xs font-bold rounded-xl border transition-all ${
+                className={`py-2 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                   actionType === "student"
-                    ? "border-[#2563EB] bg-[#EFF6FF] text-[#2563EB]"
+                    ? "border-[#FF5F1F] bg-[#FFF7ED] text-[#C2410C]"
                     : "border-slate-200 bg-white text-slate-600"
                 }`}
               >
@@ -214,9 +214,9 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
               <button
                 type="button"
                 onClick={() => setActionType("fee")}
-                className={`py-2 text-xs font-bold rounded-xl border transition-all ${
+                className={`py-2 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                   actionType === "fee"
-                    ? "border-[#2563EB] bg-[#EFF6FF] text-[#2563EB]"
+                    ? "border-[#FF5F1F] bg-[#FFF7ED] text-[#C2410C]"
                     : "border-slate-200 bg-white text-slate-600"
                 }`}
               >
@@ -225,9 +225,9 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
               <button
                 type="button"
                 onClick={() => setActionType("attendance")}
-                className={`py-2 text-xs font-bold rounded-xl border transition-all ${
+                className={`py-2 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                   actionType === "attendance"
-                    ? "border-[#2563EB] bg-[#EFF6FF] text-[#2563EB]"
+                    ? "border-[#FF5F1F] bg-[#FFF7ED] text-[#C2410C]"
                     : "border-slate-200 bg-white text-slate-600"
                 }`}
               >
@@ -238,7 +238,7 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
             <form onSubmit={handleActionSubmit} className="space-y-3">
               <div>
                 <Label className="text-xs font-semibold">Student Name</Label>
-                <Input required placeholder="e.g. Danial Ahmed" className="mt-1 h-9 rounded-xl text-xs" />
+                <Input required placeholder="e.g. Danial Ahmed" className="mt-1 h-9 rounded-xl text-xs focus:border-[#FF5F1F]" />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
@@ -252,7 +252,7 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
                 </div>
                 <div>
                   <Label className="text-xs font-semibold">Amount (PKR)</Label>
-                  <Input type="number" defaultValue={14500} className="mt-1 h-9 rounded-xl text-xs" />
+                  <Input type="number" defaultValue={14500} className="mt-1 h-9 rounded-xl text-xs focus:border-[#FF5F1F]" />
                 </div>
               </div>
 
@@ -268,7 +268,7 @@ export function TopNav({ title = "Dashboard", subtitle, user }: TopNavProps) {
                 </Button>
                 <button
                   type="submit"
-                  className="rounded-xl bg-[#2563EB] px-4 py-1.5 text-xs font-bold text-white hover:bg-[#1D4ED8] transition-colors"
+                  className="rounded-xl bg-[#FF5F1F] px-4 py-1.5 text-xs font-bold text-white hover:bg-[#E54E10] transition-colors cursor-pointer shadow-xs"
                 >
                   Confirm & Save
                 </button>

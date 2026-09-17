@@ -150,39 +150,50 @@ export default function StudentsPage() {
       <div className="mx-auto max-w-7xl px-6 sm:px-10 space-y-5">
         {/* Top 4 Stat Cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm">
-            <p className="text-xs font-semibold text-slate-400">Total Enrolled</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
-              1,248
-            </h3>
+          <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[120px]">
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="text-xs font-semibold text-slate-400">Total Enrolled</p>
+                <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
+                  1,248
+                </h3>
+              </div>
+              <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
+            </div>
             <span className="text-xs text-emerald-400 font-semibold mt-2 inline-block">
               +42 this semester
             </span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80">
-            <p className="text-xs font-semibold text-slate-500">Average Attendance</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
-              94.8%
-            </h3>
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80 flex flex-col justify-between min-h-[120px]">
+            <div>
+              <p className="text-xs font-semibold text-slate-500">Average Attendance</p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
+                94.8%
+              </h3>
+            </div>
             <span className="text-xs text-slate-400 mt-2 inline-block">Verified turnstile entries</span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80">
-            <p className="text-xs font-semibold text-slate-500">Fee Clearance</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
-              92.3%
-            </h3>
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80 flex flex-col justify-between min-h-[120px]">
+            <div>
+              <p className="text-xs font-semibold text-slate-500">Fee Clearance</p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
+                92.3%
+              </h3>
+            </div>
             <span className="text-xs text-emerald-600 font-semibold mt-2 inline-block">
               1,152 up to date
             </span>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80">
-            <p className="text-xs font-semibold text-slate-500">Institutional GPA</p>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
-              3.64 / 4.0
-            </h3>
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(15,23,42,0.03)] border border-slate-200/80 flex flex-col justify-between min-h-[120px]">
+            <div>
+              <p className="text-xs font-semibold text-slate-500">Institutional GPA</p>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] mt-1">
+                3.64 / 4.0
+              </h3>
+            </div>
             <span className="text-xs text-slate-400 mt-2 inline-block">Top 5% in Board</span>
           </div>
         </div>
@@ -197,7 +208,7 @@ export default function StudentsPage() {
                 placeholder="Search students by name, roll ID..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="h-10 w-full rounded-full bg-white pl-9 pr-4 text-xs font-medium text-slate-800 shadow-2xs border border-slate-200/80 focus:border-[#2563EB] focus:outline-none"
+                className="h-10 w-full rounded-full bg-white pl-9 pr-4 text-xs font-medium text-slate-800 shadow-2xs border border-slate-200/80 focus:border-[#FF5F1F] focus:outline-none"
               />
             </div>
 
@@ -222,7 +233,7 @@ export default function StudentsPage() {
           <button
             type="button"
             onClick={() => setIsAddModalOpen(true)}
-            className="inline-flex items-center gap-2 rounded-full bg-[#2563EB] px-5 py-2.5 text-xs font-bold text-white shadow-2xs hover:bg-[#1D4ED8] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#FF5F1F] px-5 py-2.5 text-xs font-bold text-white shadow-2xs hover:bg-[#E54E10] transition-colors cursor-pointer"
           >
             <Plus className="h-4 w-4" />
             Enroll Student
@@ -249,7 +260,7 @@ export default function StudentsPage() {
                   <tr key={s.id} className="hover:bg-slate-50/80 transition-colors">
                     <td className="py-3.5 px-3">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#0F172A] text-[#38BDF8] font-bold text-xs">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#0F172A] text-[#FF5F1F] font-bold text-xs">
                           {s.name.slice(0, 2).toUpperCase()}
                         </div>
                         <span className="font-bold text-[#0F172A]">{s.name}</span>
@@ -266,7 +277,9 @@ export default function StudentsPage() {
                         className={`inline-flex items-center rounded-full px-3 py-0.5 text-[10px] font-bold ${
                           s.feeStatus === "Paid"
                             ? "bg-[#0F172A] text-white shadow-2xs"
-                            : "bg-blue-50 text-[#2563EB] border border-blue-200"
+                            : s.feeStatus === "Pending"
+                            ? "bg-orange-50 text-[#C2410C] border border-orange-200"
+                            : "bg-rose-50 text-rose-700 border border-rose-200"
                         }`}
                       >
                         {s.feeStatus}
@@ -276,7 +289,7 @@ export default function StudentsPage() {
                       <button
                         type="button"
                         onClick={() => setSelectedStudent(s)}
-                        className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-[#2563EB] hover:text-white transition-colors cursor-pointer"
+                        className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-[#FF5F1F] hover:text-white transition-colors cursor-pointer"
                       >
                         Profile
                       </button>
@@ -329,7 +342,7 @@ export default function StudentsPage() {
               <button
                 type="button"
                 onClick={() => alert("Student Card Downloaded")}
-                className="rounded-xl bg-[#0F172A] px-4 py-1.5 text-xs font-bold text-white hover:bg-[#2563EB] transition-colors cursor-pointer"
+                className="rounded-xl bg-[#0F172A] px-4 py-1.5 text-xs font-bold text-white hover:bg-[#FF5F1F] transition-colors cursor-pointer"
               >
                 Print Student ID
               </button>
@@ -348,13 +361,13 @@ export default function StudentsPage() {
         <form onSubmit={handleAddStudent} className="space-y-3.5">
           <div>
             <Label className="text-xs font-semibold">Student Full Name</Label>
-            <Input required placeholder="e.g. Zeeshan Haider" value={newName} onChange={(e) => setNewName(e.target.value)} className="mt-1 h-9 rounded-xl text-xs" />
+            <Input required placeholder="e.g. Zeeshan Haider" value={newName} onChange={(e) => setNewName(e.target.value)} className="mt-1 h-9 rounded-xl text-xs focus:border-[#FF5F1F]" />
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div>
               <Label className="text-xs font-semibold">Grade</Label>
-              <select value={newGrade} onChange={(e) => setNewGrade(e.target.value)} className="mt-1 flex h-9 w-full rounded-xl border border-slate-200 bg-white px-3 text-xs text-slate-800">
+              <select value={newGrade} onChange={(e) => setNewGrade(e.target.value)} className="mt-1 flex h-9 w-full rounded-xl border border-slate-200 bg-white px-3 text-xs text-slate-800 focus:border-[#FF5F1F]">
                 <option>Grade 10</option>
                 <option>Grade 9</option>
                 <option>Grade 11</option>
@@ -364,7 +377,7 @@ export default function StudentsPage() {
             </div>
             <div>
               <Label className="text-xs font-semibold">Guardian Name</Label>
-              <Input required placeholder="Parent Name" value={newGuardian} onChange={(e) => setNewGuardian(e.target.value)} className="mt-1 h-9 rounded-xl text-xs" />
+              <Input required placeholder="Parent Name" value={newGuardian} onChange={(e) => setNewGuardian(e.target.value)} className="mt-1 h-9 rounded-xl text-xs focus:border-[#FF5F1F]" />
             </div>
           </div>
 
@@ -372,7 +385,7 @@ export default function StudentsPage() {
             <Button type="button" variant="outline" size="sm" className="rounded-xl" onClick={() => setIsAddModalOpen(false)}>
               Cancel
             </Button>
-            <button type="submit" className="rounded-xl bg-[#2563EB] px-4 py-1.5 text-xs font-bold text-white hover:bg-[#1D4ED8] transition-colors cursor-pointer">
+            <button type="submit" className="rounded-xl bg-[#FF5F1F] px-4 py-1.5 text-xs font-bold text-white hover:bg-[#E54E10] transition-colors cursor-pointer">
               Save Admission
             </button>
           </div>

@@ -23,11 +23,11 @@ export default function Home() {
   const [selectedDay, setSelectedDay] = React.useState("19");
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#2563EB] selection:text-white font-sans antialiased">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#FF5F1F] selection:text-white font-sans antialiased">
       {/* Top Banner */}
       <div className="bg-[#0F172A] text-white px-4 py-2 text-center text-xs font-semibold">
         <span className="inline-flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#38BDF8]" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[#FF5F1F]" />
           <span>EduPak Education OS</span>
           <span className="text-slate-500">•</span>
           <span className="text-slate-300">Clean, unified management for students, fees, attendance & LMS</span>
@@ -42,7 +42,7 @@ export default function Home() {
             <span className="text-2xl font-extrabold tracking-tight text-[#0F172A]">
               EduPak
             </span>
-            <span className="h-2 w-2 rounded-full bg-[#2563EB] mt-1" />
+            <span className="h-2 w-2 rounded-full bg-[#FF5F1F] mt-1" />
           </Link>
 
           {/* Nav Links */}
@@ -63,7 +63,7 @@ export default function Home() {
             </Link>
             <Link
               href="/dashboard"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#2563EB] px-5 py-2 text-xs font-bold text-white shadow-xs hover:bg-[#1D4ED8] transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#FF5F1F] px-5 py-2 text-xs font-bold text-white shadow-xs hover:bg-[#E54E10] transition-colors cursor-pointer"
             >
               Launch App
               <ArrowRight className="h-3.5 w-3.5" />
@@ -77,7 +77,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 sm:px-10 text-center">
           {/* Pill Badge */}
           <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#0F172A] shadow-2xs border border-slate-200/80 mb-6">
-            <span className="h-2 w-2 rounded-full bg-[#2563EB]" />
+            <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
             Clean, Minimalist Education Operating System
           </div>
 
@@ -94,7 +94,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/dashboard"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#2563EB] px-7 py-3.5 text-xs font-bold text-white shadow-sm hover:bg-[#1D4ED8] transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#FF5F1F] px-7 py-3.5 text-xs font-bold text-white shadow-sm hover:bg-[#E54E10] transition-colors cursor-pointer"
             >
               Open Dashboard
               <ArrowRight className="h-4 w-4" />
@@ -122,7 +122,7 @@ export default function Home() {
                 </span>
               </div>
               <div className="flex items-center gap-2 text-xs font-bold text-slate-700">
-                <span className="h-2 w-2 rounded-full bg-[#2563EB]" />
+                <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
                 Live Demo
               </div>
             </div>
@@ -131,9 +131,14 @@ export default function Home() {
             <div className="space-y-4">
               {/* 4 Stat Cards */}
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm">
-                  <p className="text-xs font-semibold text-slate-400">Total Revenue</p>
-                  <h3 className="text-2xl font-bold text-white mt-1">PKR 84,200</h3>
+                <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[120px]">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-xs font-semibold text-slate-400">Total Revenue</p>
+                      <h3 className="text-2xl font-bold text-white mt-1">PKR 84,200</h3>
+                    </div>
+                    <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
+                  </div>
                   <div className="flex items-center gap-1.5 text-xs text-emerald-400 mt-2 font-semibold">
                     <ArrowUp className="h-3 w-3" />
                     <span>4.2% from last month</span>
@@ -200,12 +205,12 @@ export default function Home() {
                           <div className="w-8 sm:w-10 bg-slate-100 rounded-xl overflow-hidden flex items-end h-32 p-1">
                             <div
                               className={`w-full rounded-lg ${
-                                bar.active ? "bg-[#0F172A] ring-2 ring-[#2563EB]" : "bg-[#334155]"
+                                bar.active ? "bg-[#FF5F1F] shadow-sm ring-2 ring-[#FF5F1F]/40" : "bg-[#0F172A]"
                               }`}
                               style={{ height: bar.h }}
                             />
                           </div>
-                          <span className={`text-[11px] font-bold ${bar.active ? "text-[#0F172A]" : "text-slate-400"}`}>
+                          <span className={`text-[11px] font-bold ${bar.active ? "text-[#FF5F1F]" : "text-slate-400"}`}>
                             {bar.m}
                           </span>
                         </div>
@@ -237,11 +242,11 @@ export default function Home() {
                           onClick={() => setSelectedDay(item.date)}
                           className={`flex flex-col items-center justify-center py-2 rounded-xl transition-all cursor-pointer ${
                             selectedDay === item.date
-                              ? "bg-[#0F172A] text-white shadow-sm"
+                              ? "bg-[#0F172A] text-white shadow-sm ring-1 ring-[#FF5F1F]"
                               : "text-slate-600 hover:bg-slate-50"
                           }`}
                         >
-                          <span className="text-[9px] font-medium text-slate-400">{item.day}</span>
+                          <span className={`text-[9px] font-medium ${selectedDay === item.date ? "text-[#FF5F1F]" : "text-slate-400"}`}>{item.day}</span>
                           <span className="text-xs font-bold mt-0.5">{item.date}</span>
                         </button>
                       ))}
@@ -267,7 +272,7 @@ export default function Home() {
                           d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                         />
                         <path
-                          className="text-[#2563EB]"
+                          className="text-[#FF5F1F]"
                           strokeDasharray="65, 100"
                           strokeWidth="3.5"
                           strokeLinecap="round"
@@ -307,7 +312,7 @@ export default function Home() {
                         <td className="py-2.5 px-2 font-bold text-[#0F172A]">Digital Marketing</td>
                         <td className="py-2.5 px-2 text-slate-600">Aria</td>
                         <td className="py-2.5 px-2 font-mono text-slate-400">#3456791</td>
-                        <td className="py-2.5 px-2 font-bold text-[#0F172A]">$372.00</td>
+                        <td className="py-2.5 px-2 font-bold text-[#0F172A]">PKR 14,500</td>
                         <td className="py-2.5 px-2 text-right">
                           <span className="rounded-full bg-[#0F172A] px-3 py-0.5 text-[10px] font-bold text-white shadow-2xs">
                             Paid
@@ -327,7 +332,7 @@ export default function Home() {
       <section id="features" className="py-16 bg-white border-t border-slate-200/80">
         <div className="mx-auto max-w-7xl px-6 sm:px-10">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#2563EB]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#FF5F1F]">
               Platform Architecture
             </span>
             <h2 className="mt-2 text-3xl font-extrabold text-[#0F172A] tracking-tight">
@@ -340,7 +345,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div className="rounded-2xl bg-[#F8FAFC] p-6 border border-slate-200/80">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] text-[#38BDF8] mb-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] text-[#FF5F1F] mb-4">
                 <Users className="h-5 w-5" />
               </div>
               <h3 className="text-sm font-bold text-[#0F172A]">Student Information System</h3>
@@ -350,7 +355,7 @@ export default function Home() {
             </div>
 
             <div id="financials" className="rounded-2xl bg-[#F8FAFC] p-6 border border-slate-200/80">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] text-[#38BDF8] mb-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] text-[#FF5F1F] mb-4">
                 <CreditCard className="h-5 w-5" />
               </div>
               <h3 className="text-sm font-bold text-[#0F172A]">Smart Fee & Challan Engine</h3>
@@ -360,7 +365,7 @@ export default function Home() {
             </div>
 
             <div id="attendance" className="rounded-2xl bg-[#F8FAFC] p-6 border border-slate-200/80">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] text-[#38BDF8] mb-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F172A] text-[#FF5F1F] mb-4">
                 <CalendarCheck className="h-5 w-5" />
               </div>
               <h3 className="text-sm font-bold text-[#0F172A]">Biometric RFID Attendance</h3>

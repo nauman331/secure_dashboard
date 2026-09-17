@@ -16,18 +16,18 @@ export const AuthLayout = ({
 }: AuthLayoutProps) => {
     return (
         <div className="flex min-h-screen w-full bg-[#F8FAFC] text-[#0F172A]">
-            {/* Left Branded Panel */}
+            {/* Left Branded Panel in Midnight Slate with Orange accents */}
             <div className="relative hidden w-[42%] bg-[#0F172A] text-white lg:flex lg:flex-col lg:justify-between p-12">
                 {/* Brand */}
                 <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#2563EB] text-white shadow-sm">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#FF5F1F] text-white shadow-sm">
                         <GraduationCap className="h-5 w-5" />
                     </div>
                     <div>
                         <span className="text-xl font-extrabold tracking-tight text-white font-sans">
                             EduPak
                         </span>
-                        <span className="block text-[10px] font-bold uppercase tracking-widest text-[#38BDF8]">
+                        <span className="block text-[10px] font-bold uppercase tracking-widest text-[#FF5F1F]">
                             Education OS
                         </span>
                     </div>
@@ -36,8 +36,8 @@ export const AuthLayout = ({
                 {/* Features & Copy */}
                 <div>
                     {eyebrow && (
-                        <div className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-[#38BDF8] mb-4">
-                            <span className="h-1.5 w-1.5 rounded-full bg-[#38BDF8]" />
+                        <div className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-[#FF5F1F] mb-4">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#FF5F1F]" />
                             {eyebrow}
                         </div>
                     )}
@@ -50,19 +50,19 @@ export const AuthLayout = ({
 
                     <div className="mt-8 space-y-3.5">
                         <div className="flex items-center gap-3 text-xs font-medium text-slate-200">
-                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2563EB] text-white">
+                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#FF5F1F] text-white">
                                 <Check className="h-3 w-3 stroke-[3]" />
                             </div>
                             <span>Complete Student Information System (SIS)</span>
                         </div>
                         <div className="flex items-center gap-3 text-xs font-medium text-slate-200">
-                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2563EB] text-white">
+                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#FF5F1F] text-white">
                                 <Check className="h-3 w-3 stroke-[3]" />
                             </div>
                             <span>Automated Fee Challans & Multi-Channel Reconciliation</span>
                         </div>
                         <div className="flex items-center gap-3 text-xs font-medium text-slate-200">
-                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2563EB] text-white">
+                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#FF5F1F] text-white">
                                 <Check className="h-3 w-3 stroke-[3]" />
                             </div>
                             <span>Biometric Turnstiles & Automated Parent Notifications</span>

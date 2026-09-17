@@ -82,7 +82,7 @@ export function Sidebar({ user }: SidebarProps) {
               <span className="text-2xl font-extrabold tracking-tight text-[#0F172A]">
                 EduPak
               </span>
-              <span className="h-2 w-2 rounded-full bg-[#2563EB] ml-1 mt-1.5" />
+              <span className="h-2 w-2 rounded-full bg-[#FF5F1F] ml-1 mt-1.5" />
             </div>
           </Link>
         </div>
@@ -110,7 +110,7 @@ export function Sidebar({ user }: SidebarProps) {
                 <item.icon
                   className={cn(
                     "h-4 w-4 shrink-0 transition-colors",
-                    isActive ? "text-[#38BDF8]" : "text-slate-400 group-hover:text-slate-600"
+                    isActive ? "text-[#FF5F1F]" : "text-slate-400 group-hover:text-slate-600"
                   )}
                 />
                 <span>{item.title}</span>
@@ -119,19 +119,19 @@ export function Sidebar({ user }: SidebarProps) {
           })}
         </nav>
 
-        {/* Upgrade / Pro Card in Sidebar (matching Skillset layout with refined colors) */}
+        {/* Upgrade / Pro Card in Sidebar (Midnight Slate + Orange dot & CTA) */}
         <div className="pt-3 pb-4">
           <div className="rounded-2xl bg-[#0F172A] p-4 text-white shadow-sm text-left relative overflow-hidden">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-white">Campus Edition Pro</span>
-              <span className="h-1.5 w-1.5 rounded-full bg-[#38BDF8]" />
+              <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
             </div>
-            <p className="mt-1 text-[11px] text-slate-300 leading-tight">
-              Biometric turnstiles, SMS dispatch & Board scorecards.
+            <p className="mt-1.5 text-[11px] text-slate-300 leading-tight">
+              Biometric turnstiles, automated SMS & Board transcripts.
             </p>
             <Link
               href="/settings"
-              className="mt-3 block w-full rounded-xl bg-white/10 hover:bg-[#2563EB] hover:text-white transition-colors py-1.5 text-center text-xs font-bold text-slate-200"
+              className="mt-3 block w-full rounded-xl bg-white/10 hover:bg-[#FF5F1F] hover:text-white transition-colors py-1.5 text-center text-xs font-bold text-slate-200"
             >
               Configure
             </Link>

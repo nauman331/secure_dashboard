@@ -173,26 +173,25 @@ export default function ResultsPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-8 pt-6 space-y-6">
         {/* KPI Strip */}
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          <Card className="rounded-2xl border border-slate-200/80 shadow-[0_2px_12px_rgba(15,23,42,0.03)] bg-white">
-            <CardHeader className="p-5 pb-2">
-              <CardDescription className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Overall Pass Rate
-              </CardDescription>
-              <CardTitle className="text-2xl font-extrabold text-emerald-600 tracking-tight">
-                96.8%
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-5 pt-0">
-              <p className="text-xs text-slate-500 font-medium">1,208 / 1,248 students cleared</p>
-            </CardContent>
-          </Card>
+          <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[120px]">
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="text-xs font-semibold text-slate-400">Overall Pass Rate</p>
+                <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
+                  96.8%
+                </h3>
+              </div>
+              <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
+            </div>
+            <p className="text-xs text-emerald-400 font-medium">1,208 / 1,248 students cleared</p>
+          </div>
 
           <Card className="rounded-2xl border border-slate-200/80 shadow-[0_2px_12px_rgba(15,23,42,0.03)] bg-white">
             <CardHeader className="p-5 pb-2">
               <CardDescription className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                 A+ & A Distinction
               </CardDescription>
-              <CardTitle className="text-2xl font-extrabold text-[#2563EB] tracking-tight">
+              <CardTitle className="text-2xl font-extrabold text-[#FF5F1F] tracking-tight">
                 62.4%
               </CardTitle>
             </CardHeader>
@@ -242,24 +241,24 @@ export default function ResultsPage() {
           </CardHeader>
           <CardContent className="p-0 space-y-4">
             <div className="flex h-3.5 w-full rounded-full overflow-hidden bg-slate-100">
-              <div className="bg-emerald-500" style={{ width: "28%" }} title="A+ (28%)" />
-              <div className="bg-[#2563EB]" style={{ width: "34%" }} title="A (34%)" />
-              <div className="bg-indigo-500" style={{ width: "22%" }} title="B (22%)" />
+              <div className="bg-[#FF5F1F]" style={{ width: "28%" }} title="A+ (28%)" />
+              <div className="bg-[#0F172A]" style={{ width: "34%" }} title="A (34%)" />
+              <div className="bg-slate-500" style={{ width: "22%" }} title="B (22%)" />
               <div className="bg-amber-500" style={{ width: "12%" }} title="C (12%)" />
               <div className="bg-rose-500" style={{ width: "4%" }} title="D/F (4%)" />
             </div>
 
             <div className="flex flex-wrap items-center justify-between gap-3 text-xs pt-1">
               <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F1F]" />
                 <span className="text-slate-600 font-medium">A+ (90-100%): <strong className="text-slate-900">349</strong></span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#2563EB]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#0F172A]" />
                 <span className="text-slate-600 font-medium">A (80-89%): <strong className="text-slate-900">424</strong></span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-indigo-500" />
+                <span className="h-2.5 w-2.5 rounded-full bg-slate-500" />
                 <span className="text-slate-600 font-medium">B (70-79%): <strong className="text-slate-900">274</strong></span>
               </div>
               <div className="flex items-center gap-2">
@@ -280,7 +279,7 @@ export default function ResultsPage() {
             <select
               value={selectedExam}
               onChange={(e) => setSelectedExam(e.target.value)}
-              className="h-9 rounded-xl border border-slate-200/80 bg-white px-3 text-xs font-semibold text-slate-800 shadow-sm focus:outline-none focus:border-[#2563EB]"
+              className="h-9 rounded-xl border border-slate-200/80 bg-white px-3 text-xs font-semibold text-slate-800 shadow-sm focus:outline-none focus:border-[#FF5F1F]"
             >
               <option value="Midterm Assessments 2026">Midterm Assessments 2026</option>
               <option value="Monthly Test Series - August">Monthly Test Series - August</option>
@@ -294,17 +293,17 @@ export default function ResultsPage() {
                 placeholder="Search student or roll number..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="h-9 w-full rounded-xl border border-slate-200/80 bg-white pl-8 pr-3 text-xs shadow-sm focus:border-[#2563EB] focus:outline-none"
+                className="h-9 w-full rounded-xl border border-slate-200/80 bg-white pl-8 pr-3 text-xs shadow-sm focus:border-[#FF5F1F] focus:outline-none"
               />
             </div>
           </div>
 
           <Button
             variant="outline"
-            className="rounded-xl border-slate-200 bg-white px-3.5 text-xs font-semibold text-slate-800 shadow-sm hover:bg-slate-50 gap-1.5 h-9"
+            className="rounded-xl border-slate-200 bg-white px-3.5 text-xs font-semibold text-slate-800 shadow-sm hover:bg-slate-50 gap-1.5 h-9 cursor-pointer"
             onClick={() => alert("Broad-sheet exported as CSV.")}
           >
-            <FileSpreadsheet className="h-3.5 w-3.5 text-[#2563EB]" />
+            <FileSpreadsheet className="h-3.5 w-3.5 text-[#FF5F1F]" />
             Export Broad-sheet (CSV)
           </Button>
         </div>
@@ -328,7 +327,7 @@ export default function ResultsPage() {
                 <tbody className="divide-y divide-slate-100">
                   {filteredResults.map((r) => (
                     <tr key={r.id} className="hover:bg-slate-50/60 transition-colors">
-                      <td className="py-3.5 px-5 font-extrabold text-slate-900 text-xs">
+                      <td className="py-3.5 px-5 font-extrabold text-[#0F172A] text-xs">
                         #{r.rank}
                       </td>
                       <td className="py-3.5 px-5">
@@ -344,7 +343,7 @@ export default function ResultsPage() {
                       </td>
                       <td className="py-3.5 px-5 text-center">
                         <Badge
-                          variant={r.letterGrade.startsWith("A") ? "brand" : "secondary"}
+                          variant={r.letterGrade.startsWith("A") ? "brandSoft" : "secondary"}
                           className="font-bold text-xs"
                         >
                           {r.letterGrade}
@@ -355,7 +354,7 @@ export default function ResultsPage() {
                           variant="outline"
                           size="sm"
                           onClick={() => setActiveReportCard(r)}
-                          className="rounded-xl text-xs font-semibold h-7 px-2.5 border-slate-200 hover:bg-slate-50 hover:text-[#2563EB] gap-1"
+                          className="rounded-xl text-xs font-semibold h-7 px-2.5 border-slate-200 hover:bg-slate-50 hover:text-[#FF5F1F] gap-1 cursor-pointer"
                         >
                           <Eye className="h-3 w-3" />
                           View Card
@@ -391,7 +390,7 @@ export default function ResultsPage() {
               </div>
               <div className="text-right">
                 <span className="text-[11px] text-slate-400 uppercase font-semibold">Overall Grade</span>
-                <p className="text-2xl font-extrabold text-[#2563EB]">
+                <p className="text-2xl font-extrabold text-[#FF5F1F]">
                   {activeReportCard.letterGrade}
                 </p>
               </div>
@@ -425,7 +424,7 @@ export default function ResultsPage() {
                   ))}
                   <tr className="bg-slate-50/80 font-bold border-t border-slate-200">
                     <td className="py-3 px-3.5 text-slate-900">Total Aggregate</td>
-                    <td className="py-3 px-3.5 text-center text-[#2563EB]">
+                    <td className="py-3 px-3.5 text-center text-[#FF5F1F]">
                       {activeReportCard.marksObtained}
                     </td>
                     <td className="py-3 px-3.5 text-center text-slate-400">
@@ -457,7 +456,7 @@ export default function ResultsPage() {
               </Button>
               <Button
                 size="sm"
-                className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-xl text-xs font-semibold gap-1.5 shadow-sm"
+                className="bg-[#FF5F1F] hover:bg-[#E54E10] text-white rounded-xl text-xs font-semibold gap-1.5 shadow-sm cursor-pointer"
                 onClick={() => alert("Sending transcript to print spooler...")}
               >
                 <Printer className="h-3.5 w-3.5" />

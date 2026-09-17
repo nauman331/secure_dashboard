@@ -126,19 +126,18 @@ export default function FacultyPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-8 pt-6 space-y-6">
         {/* KPI Strip */}
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          <Card className="rounded-2xl border border-slate-200/80 shadow-[0_2px_12px_rgba(15,23,42,0.03)] bg-white">
-            <CardHeader className="p-5 pb-2">
-              <CardDescription className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Total Faculty
-              </CardDescription>
-              <CardTitle className="text-2xl font-extrabold text-slate-900 tracking-tight">
-                54 Teachers
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-5 pt-0">
-              <p className="text-xs text-slate-500 font-medium">Student-Teacher Ratio 1:23</p>
-            </CardContent>
-          </Card>
+          <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[120px]">
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="text-xs font-semibold text-slate-400">Total Faculty</p>
+                <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
+                  54 Teachers
+                </h3>
+              </div>
+              <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
+            </div>
+            <p className="text-xs text-slate-300 font-medium">Student-Teacher Ratio 1:23</p>
+          </div>
 
           <Card className="rounded-2xl border border-slate-200/80 shadow-[0_2px_12px_rgba(15,23,42,0.03)] bg-white">
             <CardHeader className="p-5 pb-2">
@@ -173,7 +172,7 @@ export default function FacultyPage() {
               <CardDescription className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                 Avg. Experience
               </CardDescription>
-              <CardTitle className="text-2xl font-extrabold text-[#2563EB] tracking-tight">
+              <CardTitle className="text-2xl font-extrabold text-[#0F172A] tracking-tight">
                 11.4 Years
               </CardTitle>
             </CardHeader>
@@ -192,12 +191,12 @@ export default function FacultyPage() {
               placeholder="Search faculty by name, department, or class..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="h-9 w-full rounded-xl border border-slate-200/80 bg-white pl-8 pr-3 text-xs shadow-sm focus:border-[#2563EB] focus:outline-none"
+              className="h-9 w-full rounded-xl border border-slate-200/80 bg-white pl-8 pr-3 text-xs shadow-sm focus:border-[#FF5F1F] focus:outline-none"
             />
           </div>
 
           <Button
-            className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-xl text-xs font-semibold h-9 px-4 gap-1.5 shadow-sm transition-colors"
+            className="bg-[#FF5F1F] hover:bg-[#E54E10] text-white rounded-xl text-xs font-semibold h-9 px-4 gap-1.5 shadow-sm transition-colors cursor-pointer"
             onClick={() => alert("Add Faculty modal initialized.")}
           >
             <Plus className="h-4 w-4" />
@@ -215,7 +214,7 @@ export default function FacultyPage() {
               <CardHeader className="p-5 pb-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-slate-100 border border-slate-200 text-slate-800 font-extrabold text-xs">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#0F172A] text-[#FF5F1F] font-extrabold text-xs shadow-2xs">
                       {f.name
                         .replace("Dr. ", "")
                         .replace("Prof. ", "")
@@ -247,7 +246,7 @@ export default function FacultyPage() {
                   </div>
                   <div className="flex items-center justify-between text-slate-600">
                     <span className="text-slate-400 font-medium">Assigned Class:</span>
-                    <span className="font-semibold text-[#2563EB]">{f.assignedClass}</span>
+                    <span className="font-semibold text-[#FF5F1F]">{f.assignedClass}</span>
                   </div>
                   <div className="flex items-center justify-between text-slate-600">
                     <span className="text-slate-400 font-medium">Office Hours:</span>

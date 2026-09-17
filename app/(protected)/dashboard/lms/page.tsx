@@ -45,7 +45,7 @@ const courses: Course[] = [
     enrolled: 188,
     progress: 78,
     modulesCount: 14,
-    tagColor: "text-blue-700 bg-blue-50 border-blue-200",
+    tagColor: "text-slate-800 bg-slate-100 border-slate-200",
   },
   {
     id: "2",
@@ -67,7 +67,7 @@ const courses: Course[] = [
     enrolled: 94,
     progress: 92,
     modulesCount: 12,
-    tagColor: "text-indigo-700 bg-indigo-50 border-indigo-200",
+    tagColor: "text-orange-700 bg-orange-50 border-orange-200",
   },
   {
     id: "4",
@@ -89,7 +89,7 @@ const courses: Course[] = [
     enrolled: 240,
     progress: 88,
     modulesCount: 10,
-    tagColor: "text-sky-700 bg-sky-50 border-sky-200",
+    tagColor: "text-slate-700 bg-slate-100 border-slate-200",
   },
   {
     id: "6",
@@ -196,19 +196,18 @@ export default function LMSPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-8 pt-6 space-y-6">
         {/* Top Summary Cards */}
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          <Card className="rounded-2xl border border-slate-200/80 shadow-[0_2px_12px_rgba(15,23,42,0.03)] bg-white">
-            <CardHeader className="p-5 pb-2">
-              <CardDescription className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Active Courses
-              </CardDescription>
-              <CardTitle className="text-2xl font-extrabold text-slate-900 tracking-tight">
-                38 Subjects
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-5 pt-0">
-              <p className="text-xs text-slate-500 font-medium">Across 6 grade sections</p>
-            </CardContent>
-          </Card>
+          <div className="rounded-2xl bg-[#0F172A] text-white p-5 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[120px]">
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="text-xs font-semibold text-slate-400">Active Courses</p>
+                <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
+                  38 Subjects
+                </h3>
+              </div>
+              <span className="h-2 w-2 rounded-full bg-[#FF5F1F]" />
+            </div>
+            <p className="text-xs text-slate-300 font-medium">Across 6 grade sections</p>
+          </div>
 
           <Card className="rounded-2xl border border-slate-200/80 shadow-[0_2px_12px_rgba(15,23,42,0.03)] bg-white">
             <CardHeader className="p-5 pb-2">
@@ -231,7 +230,7 @@ export default function LMSPage() {
               <CardDescription className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                 Coursework Submissions
               </CardDescription>
-              <CardTitle className="text-2xl font-extrabold text-[#2563EB] tracking-tight">
+              <CardTitle className="text-2xl font-extrabold text-[#0F172A] tracking-tight">
                 4,930
               </CardTitle>
             </CardHeader>
@@ -245,7 +244,7 @@ export default function LMSPage() {
               <CardDescription className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                 Digital Resources
               </CardDescription>
-              <CardTitle className="text-2xl font-extrabold text-slate-900 tracking-tight">
+              <CardTitle className="text-2xl font-extrabold text-[#0F172A] tracking-tight">
                 428 Files
               </CardTitle>
             </CardHeader>
@@ -261,26 +260,26 @@ export default function LMSPage() {
             <TabsList className="bg-slate-100/90 p-1 rounded-xl">
               <TabsTrigger
                 value="courses"
-                className="rounded-lg text-xs font-semibold data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm"
+                className="rounded-lg text-xs font-semibold data-[state=active]:bg-[#0F172A] data-[state=active]:text-white data-[state=active]:shadow-sm"
               >
                 Active Courses ({courses.length})
               </TabsTrigger>
               <TabsTrigger
                 value="assignments"
-                className="rounded-lg text-xs font-semibold data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm"
+                className="rounded-lg text-xs font-semibold data-[state=active]:bg-[#0F172A] data-[state=active]:text-white data-[state=active]:shadow-sm"
               >
                 Assignments & Quizzes ({assignments.length})
               </TabsTrigger>
               <TabsTrigger
                 value="materials"
-                className="rounded-lg text-xs font-semibold data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm"
+                className="rounded-lg text-xs font-semibold data-[state=active]:bg-[#0F172A] data-[state=active]:text-white data-[state=active]:shadow-sm"
               >
                 Study Materials & Notes
               </TabsTrigger>
             </TabsList>
 
             <Button
-              className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-xl text-xs font-semibold h-9 px-4 gap-1.5 shadow-sm transition-colors"
+              className="bg-[#FF5F1F] hover:bg-[#E54E10] text-white rounded-xl text-xs font-semibold h-9 px-4 gap-1.5 shadow-sm transition-colors cursor-pointer"
               onClick={() => alert("Add Course wizard initialized.")}
             >
               <Plus className="h-4 w-4" />
@@ -319,7 +318,7 @@ export default function LMSPage() {
                       </div>
                       <div className="h-2 w-full rounded-full bg-slate-100 overflow-hidden">
                         <div
-                          className="h-full rounded-full bg-[#2563EB] transition-all"
+                          className="h-full rounded-full bg-[#FF5F1F] transition-all"
                           style={{ width: `${c.progress}%` }}
                         />
                       </div>
@@ -336,7 +335,7 @@ export default function LMSPage() {
 
                     <Button
                       variant="outline"
-                      className="w-full rounded-xl text-xs font-semibold h-8 border-slate-200 hover:bg-slate-50 hover:text-[#2563EB] transition-colors"
+                      className="w-full rounded-xl text-xs font-semibold h-8 border-slate-200 hover:bg-slate-50 hover:text-[#FF5F1F] transition-colors cursor-pointer"
                       onClick={() => setSelectedCourse(c)}
                     >
                       View Syllabus & Notes
@@ -385,7 +384,7 @@ export default function LMSPage() {
                           <Badge
                             variant={
                               a.status === "Active"
-                                ? "brand"
+                                ? "brandSoft"
                                 : a.status === "Graded"
                                 ? "success"
                                 : "warning"
@@ -424,7 +423,7 @@ export default function LMSPage() {
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-start gap-3.5">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600 font-bold">
-                        <FileText className="h-5 w-5 text-[#2563EB]" />
+                        <FileText className="h-5 w-5 text-[#FF5F1F]" />
                       </div>
                       <div>
                         <h4 className="text-xs font-bold text-slate-900 leading-tight">
@@ -443,7 +442,7 @@ export default function LMSPage() {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="rounded-xl text-xs font-semibold h-8 px-3 border-slate-200 hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:border-blue-200 transition-colors shrink-0"
+                      className="rounded-xl text-xs font-semibold h-8 px-3 border-slate-200 hover:bg-[#FFF7ED] hover:text-[#FF5F1F] hover:border-orange-200 transition-colors shrink-0 cursor-pointer"
                       onClick={() => alert(`Downloading ${m.title}...`)}
                     >
                       <Download className="h-3.5 w-3.5 mr-1" />

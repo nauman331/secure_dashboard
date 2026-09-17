@@ -14,9 +14,9 @@ const badgeVariants = cva(
         outline:
           "border border-[#E2E8F0] text-[#334155] bg-white",
         brand:
-          "bg-[#2563EB] text-white shadow-2xs",
+          "bg-[#FF5F1F] text-white shadow-2xs",
         brandSoft:
-          "bg-[#EFF6FF] text-[#2563EB] border border-[#DBEAFE]",
+          "bg-[#FFF7ED] text-[#C2410C] border border-[#FFEDD5]",
         success:
           "bg-emerald-50 text-emerald-700 border border-emerald-200/70",
         warning:
@@ -24,9 +24,7 @@ const badgeVariants = cva(
         destructive:
           "bg-rose-50 text-rose-700 border border-rose-200/70",
         info:
-          "bg-blue-50 text-blue-700 border border-blue-200/70",
-        indigo:
-          "bg-indigo-50 text-indigo-700 border border-indigo-200/70",
+          "bg-sky-50 text-sky-700 border border-sky-200/70",
       },
     },
     defaultVariants: {
