@@ -71,3 +71,20 @@ export const students = pgTable('student', {
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
+
+export const facultyStatusEnum = pgEnum('faculty_status', ['Active', 'On Leave']);
+
+export const faculty = pgTable('faculty', {
+    id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+    name: text('name').notNull(),
+    designation: text('designation').notNull(),
+    department: text('department').notNull(),
+    assignedClass: text('assigned_class').default(''),
+    email: text('email').notNull().unique(),
+    phone: varchar('phone', { length: 30 }).default(''),
+    officeHours: text('office_hours').default(''),
+    experience: text('experience').default(''),
+    status: facultyStatusEnum('status').default('Active').notNull(),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
