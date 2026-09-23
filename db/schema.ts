@@ -88,3 +88,18 @@ export const faculty = pgTable('faculty', {
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
+
+export const feeVouchers = pgTable('fee_voucher', {
+    id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+    challanNo: varchar('challan_no', { length: 40 }).notNull().unique(),
+    studentName: text('student_name').notNull(),
+    rollNo: varchar('roll_no', { length: 30 }).notNull(),
+    grade: text('grade').notNull(),
+    amount: integer('amount').notNull(),
+    dueDate: text('due_date').notNull(),
+    channel: text('channel').default('Pending Challan'),
+    status: feeStatusEnum('status').default('Pending').notNull(),
+    paidAt: timestamp('paid_at'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
